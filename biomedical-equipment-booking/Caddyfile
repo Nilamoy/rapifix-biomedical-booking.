@@ -1,0 +1,19 @@
+{
+  admin off
+  persist_config off
+  auto_https off
+}
+
+:{$PORT:8080} {
+  root * .
+  
+  encode gzip
+  
+  file_server {
+    hide .git
+    hide .env*
+  }
+  
+  php_server
+}
+
